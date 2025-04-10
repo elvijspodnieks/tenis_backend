@@ -2,13 +2,14 @@ const express = require('express')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const dotenv = require('dotenv')
 const port = process.env.PORT || 5000
-const connectDB = require('./database/db')
+const connectDB = require('./database/db.js')
 const cors = require("cors");
 const http = require("http")
 const { Server } = require("socket.io");
+dotenv.config();
 connectDB();
 const app = express()
-dotenv.config();
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -25,7 +26,7 @@ app.use(errorHandler)
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5000",
+        origin: "https://tenis-backend.vercel.app",
         methods: ["GET", "POST"],
     },
 });
