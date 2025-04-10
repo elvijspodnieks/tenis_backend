@@ -8,7 +8,7 @@ const http = require("http")
 const { Server } = require("socket.io");
 connectDB();
 const app = express()
-
+dotenv.config();
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
