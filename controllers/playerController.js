@@ -43,7 +43,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 // @route       DELETE /api/goals/:id
 // @access      Private
 const deleteGoal = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Delete goal ${req.params.id}` })
+    res.status(200).json({ message: `Delets goal ${req.params.id}` })
 })
 
 module.exports = {
