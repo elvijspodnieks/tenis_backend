@@ -26,7 +26,7 @@ app.use(errorHandler)
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://tenis-frontend.vercel.app",
+        origin: process.env.URI_FRONTEND,
         methods: ["GET", "POST"],
     },
 });
